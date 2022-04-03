@@ -1,0 +1,33 @@
+@baseUrl = http://localhost:8080
+@todoId = 
+@updateTodoId = 6249a12737fa06372a14a874
+
+GET {{baseUrl}}/api/ HTTP/1.1
+
+###
+POST {{baseUrl}}/api/todos HTTP/1.1
+Content-Type: application/json
+
+{
+    "title" : "no ir a clase",
+    "description" : "saltarme tiq",
+    "isDone": false
+}
+
+###
+GET  http://localhost:8080/api/todos/{{todoId}} HTTP/1.1
+
+###
+DELETE http://localhost:8080/api/todos/{{todoId}}  HTTP/1.1
+
+
+###
+PUT http://localhost:8080/api/todos/{{updateTodoId}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "title" : "perder la vida",
+    "description" : "no me gusta vivir",
+    "isDone": true 
+}
+
