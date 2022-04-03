@@ -48,6 +48,7 @@ class _TodoState extends State<Todo> {
             onChanged: (state) => {
                   setState(() {
                     widget.isDone = state!;
+                    widget.modifyTodo(widget.title, widget.isDone);
                   })
                 }),
         (widget.isEditing

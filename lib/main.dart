@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:julia_app/models/todoService.dart';
 import 'package:julia_app/pages/todos_page.dart';
 
-void main() {
+import 'models/todo_model.dart';
+
+void main() async {
   runApp(const MyApp());
 }
 
@@ -34,15 +37,15 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: MaterialButton(
+      body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        MaterialButton(
             color: Colors.red,
             child: const Text('Go to todos page'),
             onPressed: () => Navigator.push(
                 context,
                 MaterialPageRoute(
                     builder: (context) => const TodosPage(title: 'Todos')))),
-      ),
+      ]),
     );
   }
 }
